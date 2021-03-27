@@ -1,6 +1,7 @@
 # Valcomps
 
 React webapp for planning Valorant team comps
+Figma concept: https://www.figma.com/file/daBHKxlYJSn9D8s6LQ16Z9/Valcomps?node-id=0%3A1
 
 # Getting Started with Create React App
 
