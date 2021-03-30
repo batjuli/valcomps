@@ -18,6 +18,7 @@ const AgentIcon = (props) => {
     width: diameter,
     height: diameter,
     border: `${borderSize} solid ${borderCol}`,
+    cursor: 'pointer',
   };
   return <button style={style} onClick={onClick}></button>;
 };

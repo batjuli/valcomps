@@ -2,7 +2,7 @@ import React from 'react';
 
 const Logo = () => {
   const style = {
-    color: '#FF4655',
+    color: '#FFFFFF',
     textAlign: 'center',
   };
   return (

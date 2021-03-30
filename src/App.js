@@ -4,6 +4,15 @@ import './App.css';
 import Logo from './components/Logo';
 import AgentIcon from './components/AgentIcon';
 
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import Paper from '@material-ui/core/Paper';
+
+import GitHubIcon from '@material-ui/icons/GitHub';
+
 import valorantLogo from './images/valorantLogo.png';
 import jett from './images/jett.png';
 import phoenix from './images/phoenix.png';
@@ -20,6 +29,7 @@ import sova from './images/sova.png';
 import cypher from './images/cypher.png';
 import killjoy from './images/killjoy.png';
 import sage from './images/sage.png';
+// bet theres a better method for importing these
 
 const App = () => {
   const [agent1, setAgent1] = React.useState(valorantLogo);
@@ -33,10 +43,12 @@ const App = () => {
     flexDirection: 'column',
     alignItems: 'center',
     marginBottom: '30px',
+    marginTop: '30px',
   };
   const agentBox = {
     display: 'flex',
     gap: '45px',
+    marginBottom: '15px',
   };
   const body = {
     display: 'flex',
@@ -46,9 +58,11 @@ const App = () => {
   const selectionContainer = {
     display: 'flex',
     flexDirection: 'column',
+    gap: '15px',
   };
   const selectionRow = {
     display: 'flex',
+    gap: '15px',
   };
 
   const alreadySelected = (agent) => {
@@ -85,10 +99,58 @@ const App = () => {
   const initiators = [breach, skye, sova];
   const sentinels = [cypher, killjoy, sage];
 
+  const handleShare = () => {
+    // dummy
+    console.log('share');
+  };
+
+  const shareButton = {
+    backgroundColor: '#FF4655',
+    color: '#EBE7E0',
+  };
+
+  const buttonRow = {
+    display: 'flex',
+    gap: '15px',
+  };
+
+  const handleClear = () => {
+    setAgent1(valorantLogo);
+    setAgent2(valorantLogo);
+    setAgent3(valorantLogo);
+    setAgent4(valorantLogo);
+    setAgent5(valorantLogo);
+  };
+
+  const toolbarStyle = {
+    backgroundColor: '#FF4655',
+  };
+
+  const logo = {
+    flexGrow: '1',
+  };
+
   return (
     <div className='App'>
+      <AppBar position='relative'>
+        <Toolbar style={toolbarStyle}>
+          <Typography variant='h5' color='inherit' noWrap style={logo}>
+            VALCOMPS
+          </Typography>
+          <IconButton
+            color='primary'
+            aria-label='github repository'
+            component='span'
+            style={{ color: 'white' }}
+            onClick={() =>
+              window.open('https://github.com/batjuli/valcomps', '_blank')
+            }
+          >
+            <GitHubIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
       <div style={header}>
-        <Logo />
         <div style={agentBox}>
           <AgentIcon agent={agent1} onClick={() => setAgent1(valorantLogo)} />
           <AgentIcon agent={agent2} onClick={() => setAgent2(valorantLogo)} />
@@ -96,6 +158,15 @@ const App = () => {
           <AgentIcon agent={agent4} onClick={() => setAgent4(valorantLogo)} />
           <AgentIcon agent={agent5} onClick={() => setAgent5(valorantLogo)} />
         </div>
+        <div style={buttonRow}>
+          <Button variant='contained' onClick={handleClear}>
+            Clear All
+          </Button>
+          <Button variant='contained' onClick={handleShare} style={shareButton}>
+            Share Team
+          </Button>
+        </div>
+        <Paper />
       </div>
       <div style={body}>
         <div style={selectionContainer}>
