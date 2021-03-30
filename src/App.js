@@ -31,7 +31,17 @@ function App() {
   };
 
   const selectAgent = (agent) => {
-    setAgent1(jett);
+    if (agent1 === valorantLogo) {
+      setAgent1(agent);
+    } else if (agent2 === valorantLogo) {
+      setAgent2(agent);
+    } else if (agent3 === valorantLogo) {
+      setAgent3(agent);
+    } else if (agent4 === valorantLogo) {
+      setAgent4(agent);
+    } else if (agent5 === valorantLogo) {
+      setAgent5(agent);
+    }
   };
 
   return (
@@ -39,11 +49,11 @@ function App() {
       <div style={header}>
         <Logo />
         <div style={agentBox}>
-          <AgentIcon agent={agent1} />
-          <AgentIcon agent={agent2} />
-          <AgentIcon agent={agent3} />
-          <AgentIcon agent={agent4} />
-          <AgentIcon agent={agent5} />
+          <AgentIcon agent={agent1} onClick={() => setAgent1(valorantLogo)} />
+          <AgentIcon agent={agent2} onClick={() => setAgent2(valorantLogo)} />
+          <AgentIcon agent={agent3} onClick={() => setAgent3(valorantLogo)} />
+          <AgentIcon agent={agent4} onClick={() => setAgent4(valorantLogo)} />
+          <AgentIcon agent={agent5} onClick={() => setAgent5(valorantLogo)} />
         </div>
       </div>
       <div style={selectionContainer}>
@@ -51,7 +61,7 @@ function App() {
           <AgentIcon
             size='small'
             agent={jett}
-            onClick={() => selectAgent('jett')}
+            onClick={() => selectAgent(jett)}
           />
         </div>
       </div>
