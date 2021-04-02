@@ -32,11 +32,129 @@ import sage from './images/sage.png';
 // bet theres a better method for importing these
 
 const App = () => {
+  // agent selection states
   const [agent1, setAgent1] = React.useState(valorantLogo);
   const [agent2, setAgent2] = React.useState(valorantLogo);
   const [agent3, setAgent3] = React.useState(valorantLogo);
   const [agent4, setAgent4] = React.useState(valorantLogo);
   const [agent5, setAgent5] = React.useState(valorantLogo);
+
+  // note for future: maybe just have one state that's an array?
+  // then can map this array to the agent icons, but since there's only 5 this is fine for now
+  // then could have also just counted num duelists etc from this array ;(
+
+  // role count states
+  const [numDuelists, setNumDuelists] = React.useState(0);
+  const [numControllers, setNumControllers] = React.useState(0);
+  const [numInitiators, setNumInitiators] = React.useState(0);
+  const [numSentinels, setNumSentinels] = React.useState(0);
+
+  // agent arrays
+  const duelists = [jett, phoenix, raze, reyna, yoru];
+  const controllers = [astra, brimstone, omen, viper];
+  const initiators = [breach, skye, sova];
+  const sentinels = [cypher, killjoy, sage];
+
+  const alreadySelected = (agent) => {
+    if (
+      agent1 === agent ||
+      agent2 === agent ||
+      agent3 === agent ||
+      agent4 === agent ||
+      agent5 === agent
+    ) {
+      return true;
+    }
+    return false;
+  };
+
+  // removes an agent from selection
+  const removeAgent = (agent) => {
+    // remove the agent
+    if (agent1 === agent) {
+      setAgent1(valorantLogo);
+    } else if (agent2 === agent) {
+      setAgent2(valorantLogo);
+    } else if (agent3 === agent) {
+      setAgent3(valorantLogo);
+    } else if (agent4 === agent) {
+      setAgent4(valorantLogo);
+    } else if (agent5 === agent) {
+      setAgent5(valorantLogo);
+    }
+    // subtract from agent count
+    if (duelists.includes(agent)) {
+      setNumDuelists(numDuelists - 1);
+    } else if (controllers.includes(agent)) {
+      setNumControllers(numControllers - 1);
+    } else if (initiators.includes(agent)) {
+      setNumInitiators(numInitiators - 1);
+    } else if (sentinels.includes(agent)) {
+      setNumSentinels(numSentinels - 1);
+    }
+  };
+
+  // adds to agent count depending on role
+  const incrementRole = (agent) => {
+    if (duelists.includes(agent)) {
+      setNumDuelists(numDuelists + 1);
+    } else if (controllers.includes(agent)) {
+      setNumControllers(numControllers + 1);
+    } else if (initiators.includes(agent)) {
+      setNumInitiators(numInitiators + 1);
+    } else if (sentinels.includes(agent)) {
+      setNumSentinels(numSentinels + 1);
+    }
+  };
+
+  // adds agent only if there is space
+  const addAgent = (agent) => {
+    if (agent1 === valorantLogo) {
+      setAgent1(agent);
+      incrementRole(agent);
+    } else if (agent2 === valorantLogo) {
+      setAgent2(agent);
+      incrementRole(agent);
+    } else if (agent3 === valorantLogo) {
+      setAgent3(agent);
+      incrementRole(agent);
+    } else if (agent4 === valorantLogo) {
+      setAgent4(agent);
+      incrementRole(agent);
+    } else if (agent5 === valorantLogo) {
+      setAgent5(agent);
+      incrementRole(agent);
+    }
+  };
+
+  const clickAgent = (agent) => {
+    // if clicking valorant logo, do nothing
+    if (agent === valorantLogo) return;
+    if (alreadySelected(agent)) {
+      // if agent is already selected, unselect it
+      removeAgent(agent);
+      // else try and add the agent
+    } else {
+      addAgent(agent);
+    }
+  };
+
+  const handleShare = () => {
+    // dummy
+    console.log('share');
+  };
+
+  const handleClear = () => {
+    setAgent1(valorantLogo);
+    setAgent2(valorantLogo);
+    setAgent3(valorantLogo);
+    setAgent4(valorantLogo);
+    setAgent5(valorantLogo);
+    setNumDuelists(0);
+    setNumInitiators(0);
+    setNumControllers(0);
+    setNumSentinels(0);
+  };
 
   const header = {
     display: 'flex',
@@ -65,68 +183,12 @@ const App = () => {
     gap: '15px',
   };
 
-  const alreadySelected = (agent) => {
-    if (
-      agent1 === agent ||
-      agent2 === agent ||
-      agent3 === agent ||
-      agent4 === agent ||
-      agent5 === agent
-    ) {
-      return true;
-    }
-    return false;
+  const toolbarStyle = {
+    backgroundColor: '#FF4655',
   };
 
-  // removes an agent from selection
-  const removeAgent = (agent) => {
-    if (agent1 === agent) {
-      setAgent1(valorantLogo);
-    } else if (agent2 === agent) {
-      setAgent2(valorantLogo);
-    } else if (agent3 === agent) {
-      setAgent3(valorantLogo);
-    } else if (agent4 === agent) {
-      setAgent4(valorantLogo);
-    } else if (agent5 === agent) {
-      setAgent5(valorantLogo);
-    }
-  };
-
-  // adds agent only if there is space
-  const addAgent = (agent) => {
-    if (agent1 === valorantLogo) {
-      setAgent1(agent);
-    } else if (agent2 === valorantLogo) {
-      setAgent2(agent);
-    } else if (agent3 === valorantLogo) {
-      setAgent3(agent);
-    } else if (agent4 === valorantLogo) {
-      setAgent4(agent);
-    } else if (agent5 === valorantLogo) {
-      setAgent5(agent);
-    }
-  };
-
-  const clickAgent = (agent) => {
-    if (alreadySelected(agent)) {
-      // if agent is already selected, unselect it
-      removeAgent(agent);
-      // else try and add the agent
-    } else {
-      addAgent(agent);
-    }
-  };
-
-  // agent arrays
-  const duelists = [jett, phoenix, raze, reyna, yoru];
-  const controllers = [astra, brimstone, omen, viper];
-  const initiators = [breach, skye, sova];
-  const sentinels = [cypher, killjoy, sage];
-
-  const handleShare = () => {
-    // dummy
-    console.log('share');
+  const logo = {
+    flexGrow: '1',
   };
 
   const shareButton = {
@@ -137,22 +199,6 @@ const App = () => {
   const buttonRow = {
     display: 'flex',
     gap: '15px',
-  };
-
-  const handleClear = () => {
-    setAgent1(valorantLogo);
-    setAgent2(valorantLogo);
-    setAgent3(valorantLogo);
-    setAgent4(valorantLogo);
-    setAgent5(valorantLogo);
-  };
-
-  const toolbarStyle = {
-    backgroundColor: '#FF4655',
-  };
-
-  const logo = {
-    flexGrow: '1',
   };
 
   return (
@@ -177,11 +223,11 @@ const App = () => {
       </AppBar>
       <div style={header}>
         <div style={agentBox}>
-          <AgentIcon agent={agent1} onClick={() => setAgent1(valorantLogo)} />
-          <AgentIcon agent={agent2} onClick={() => setAgent2(valorantLogo)} />
-          <AgentIcon agent={agent3} onClick={() => setAgent3(valorantLogo)} />
-          <AgentIcon agent={agent4} onClick={() => setAgent4(valorantLogo)} />
-          <AgentIcon agent={agent5} onClick={() => setAgent5(valorantLogo)} />
+          <AgentIcon agent={agent1} onClick={() => clickAgent(agent1)} />
+          <AgentIcon agent={agent2} onClick={() => clickAgent(agent2)} />
+          <AgentIcon agent={agent3} onClick={() => clickAgent(agent3)} />
+          <AgentIcon agent={agent4} onClick={() => clickAgent(agent4)} />
+          <AgentIcon agent={agent5} onClick={() => clickAgent(agent5)} />
         </div>
         <div style={buttonRow}>
           <Button variant='contained' onClick={handleClear}>
@@ -190,6 +236,12 @@ const App = () => {
           <Button variant='contained' onClick={handleShare} style={shareButton}>
             Share Team
           </Button>
+        </div>
+        <div>
+          <Typography variant='h7' style={{ color: 'white' }}>
+            Duelists: {numDuelists} | Controllers: {numControllers} |
+            Initiators: {numInitiators} | Sentinels: {numSentinels}
+          </Typography>
         </div>
         <Paper />
       </div>
