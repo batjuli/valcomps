@@ -78,8 +78,23 @@ const App = () => {
     return false;
   };
 
-  const selectAgent = (agent) => {
-    if (alreadySelected(agent)) return;
+  // removes an agent from selection
+  const removeAgent = (agent) => {
+    if (agent1 === agent) {
+      setAgent1(valorantLogo);
+    } else if (agent2 === agent) {
+      setAgent2(valorantLogo);
+    } else if (agent3 === agent) {
+      setAgent3(valorantLogo);
+    } else if (agent4 === agent) {
+      setAgent4(valorantLogo);
+    } else if (agent5 === agent) {
+      setAgent5(valorantLogo);
+    }
+  };
+
+  // adds agent only if there is space
+  const addAgent = (agent) => {
     if (agent1 === valorantLogo) {
       setAgent1(agent);
     } else if (agent2 === valorantLogo) {
@@ -90,6 +105,16 @@ const App = () => {
       setAgent4(agent);
     } else if (agent5 === valorantLogo) {
       setAgent5(agent);
+    }
+  };
+
+  const clickAgent = (agent) => {
+    if (alreadySelected(agent)) {
+      // if agent is already selected, unselect it
+      removeAgent(agent);
+      // else try and add the agent
+    } else {
+      addAgent(agent);
     }
   };
 
@@ -175,7 +200,7 @@ const App = () => {
               <AgentIcon
                 size='small'
                 agent={agent}
-                onClick={() => selectAgent(agent)}
+                onClick={() => clickAgent(agent)}
               />
             ))}
           </div>
@@ -184,7 +209,7 @@ const App = () => {
               <AgentIcon
                 size='small'
                 agent={agent}
-                onClick={() => selectAgent(agent)}
+                onClick={() => clickAgent(agent)}
               />
             ))}
           </div>
@@ -193,7 +218,7 @@ const App = () => {
               <AgentIcon
                 size='small'
                 agent={agent}
-                onClick={() => selectAgent(agent)}
+                onClick={() => clickAgent(agent)}
               />
             ))}
           </div>
@@ -202,7 +227,7 @@ const App = () => {
               <AgentIcon
                 size='small'
                 agent={agent}
-                onClick={() => selectAgent(agent)}
+                onClick={() => clickAgent(agent)}
               />
             ))}
           </div>
