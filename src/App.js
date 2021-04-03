@@ -196,6 +196,12 @@ const App = () => {
     color: '#EBE7E0',
   };
 
+  const roleCountRow = {
+    display: 'flex',
+    gap: '20px',
+    marginBottom: '15px',
+  };
+
   const buttonRow = {
     display: 'flex',
     gap: '15px',
@@ -229,6 +235,20 @@ const App = () => {
           <AgentIcon agent={agent4} onClick={() => clickAgent(agent4)} />
           <AgentIcon agent={agent5} onClick={() => clickAgent(agent5)} />
         </div>
+        <div style={roleCountRow}>
+          <Typography variant='h7' style={{ color: 'white' }}>
+            {numDuelists} Duelists
+          </Typography>
+          <Typography variant='h7' style={{ color: 'white' }}>
+            {numControllers} Controllers
+          </Typography>
+          <Typography variant='h7' style={{ color: 'white' }}>
+            {numInitiators} Initiators
+          </Typography>
+          <Typography variant='h7' style={{ color: 'white' }}>
+            {numSentinels} Sentinels
+          </Typography>
+        </div>
         <div style={buttonRow}>
           <Button variant='contained' onClick={handleClear}>
             Clear All
@@ -236,12 +256,6 @@ const App = () => {
           <Button variant='contained' onClick={handleShare} style={shareButton}>
             Share Team
           </Button>
-        </div>
-        <div>
-          <Typography variant='h7' style={{ color: 'white' }}>
-            Duelists: {numDuelists} | Controllers: {numControllers} |
-            Initiators: {numInitiators} | Sentinels: {numSentinels}
-          </Typography>
         </div>
         <Paper />
       </div>
