@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import Logo from './components/Logo';
 import AgentIcon from './components/AgentIcon';
+import ShareDialog from './components/ShareDialog';
 
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -48,6 +48,17 @@ const App = () => {
   const [numControllers, setNumControllers] = React.useState(0);
   const [numInitiators, setNumInitiators] = React.useState(0);
   const [numSentinels, setNumSentinels] = React.useState(0);
+
+  // state for share team dialog
+  const [shareDialogOpen, setShareDialogOpen] = React.useState(false);
+
+  const handleShareOpen = () => {
+    setShareDialogOpen(true);
+  };
+
+  const handleShareClose = () => {
+    setShareDialogOpen(false);
+  };
 
   // agent arrays
   const duelists = [jett, phoenix, raze, reyna, yoru];
@@ -137,11 +148,6 @@ const App = () => {
     } else {
       addAgent(agent);
     }
-  };
-
-  const handleShare = () => {
-    // dummy
-    console.log('share');
   };
 
   const handleClear = () => {
@@ -253,7 +259,11 @@ const App = () => {
           <Button variant='contained' onClick={handleClear}>
             Clear All
           </Button>
-          <Button variant='contained' onClick={handleShare} style={shareButton}>
+          <Button
+            variant='contained'
+            onClick={handleShareOpen}
+            style={shareButton}
+          >
             Share Team
           </Button>
         </div>
@@ -297,6 +307,11 @@ const App = () => {
               />
             ))}
           </div>
+          <ShareDialog
+            open={shareDialogOpen}
+            onClose={handleShareClose}
+            teamId='abcde'
+          />
         </div>
       </div>
     </div>
