@@ -10,6 +10,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
+import Container from '@material-ui/core/Container';
 
 import GitHubIcon from '@material-ui/icons/GitHub';
 
@@ -171,7 +172,10 @@ const App = () => {
   };
   const agentBox = {
     display: 'flex',
-    gap: '45px',
+    width: '90vw',
+    maxWidth: '800px',
+    minWidth: '350px',
+    justifyContent: 'space-around',
     marginBottom: '15px',
   };
   const body = {
@@ -204,7 +208,10 @@ const App = () => {
 
   const roleCountRow = {
     display: 'flex',
-    gap: '20px',
+    width: '90vw',
+    maxWidth: '600px',
+    minWidth: '350px',
+    justifyContent: 'space-around',
     marginBottom: '15px',
   };
 
@@ -212,6 +219,18 @@ const App = () => {
     display: 'flex',
     gap: '15px',
   };
+
+  // state for window width for adapatiblity and responsiveness
+  const [winWidth, setWinWidth] = React.useState(0);
+  React.useEffect(() => {
+    const updateWidth = () => {
+      setWinWidth(window.innerWidth);
+      console.log(window.innerWidth);
+    };
+    window.addEventListener('resize', updateWidth);
+    updateWidth();
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
 
   return (
     <div className='App'>
@@ -233,87 +252,113 @@ const App = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <div style={header}>
-        <div style={agentBox}>
-          <AgentIcon agent={agent1} onClick={() => clickAgent(agent1)} />
-          <AgentIcon agent={agent2} onClick={() => clickAgent(agent2)} />
-          <AgentIcon agent={agent3} onClick={() => clickAgent(agent3)} />
-          <AgentIcon agent={agent4} onClick={() => clickAgent(agent4)} />
-          <AgentIcon agent={agent5} onClick={() => clickAgent(agent5)} />
-        </div>
-        <div style={roleCountRow}>
-          <Typography variant='h7' style={{ color: 'white' }}>
-            {numDuelists} Duelists
-          </Typography>
-          <Typography variant='h7' style={{ color: 'white' }}>
-            {numControllers} Controllers
-          </Typography>
-          <Typography variant='h7' style={{ color: 'white' }}>
-            {numInitiators} Initiators
-          </Typography>
-          <Typography variant='h7' style={{ color: 'white' }}>
-            {numSentinels} Sentinels
-          </Typography>
-        </div>
-        <div style={buttonRow}>
-          <Button variant='contained' onClick={handleClear}>
-            Clear All
-          </Button>
-          <Button
-            variant='contained'
-            onClick={handleShareOpen}
-            style={shareButton}
-          >
-            Share Team
-          </Button>
-        </div>
-        <Paper />
-      </div>
-      <div style={body}>
-        <div style={selectionContainer}>
-          <div style={selectionRow}>
-            {duelists.map((agent) => (
-              <AgentIcon
-                size='small'
-                agent={agent}
-                onClick={() => clickAgent(agent)}
-              />
-            ))}
+      <Container component='main' maxWidth='lg'>
+        <div style={header}>
+          <div style={agentBox}>
+            <AgentIcon
+              agent={agent1}
+              onClick={() => clickAgent(agent1)}
+              winWidth={winWidth}
+            />
+            <AgentIcon
+              agent={agent2}
+              onClick={() => clickAgent(agent2)}
+              winWidth={winWidth}
+            />
+            <AgentIcon
+              agent={agent3}
+              onClick={() => clickAgent(agent3)}
+              winWidth={winWidth}
+            />
+            <AgentIcon
+              agent={agent4}
+              onClick={() => clickAgent(agent4)}
+              winWidth={winWidth}
+            />
+            <AgentIcon
+              agent={agent5}
+              onClick={() => clickAgent(agent5)}
+              winWidth={winWidth}
+            />
           </div>
-          <div style={selectionRow}>
-            {controllers.map((agent) => (
-              <AgentIcon
-                size='small'
-                agent={agent}
-                onClick={() => clickAgent(agent)}
-              />
-            ))}
+          <div style={roleCountRow}>
+            <Typography variant='inherit' style={{ color: 'white' }}>
+              {numDuelists} Duelist
+            </Typography>
+            <Typography variant='inherit' style={{ color: 'white' }}>
+              {numControllers} Controller
+            </Typography>
+            <Typography variant='inherit' style={{ color: 'white' }}>
+              {numInitiators} Initiator
+            </Typography>
+            <Typography variant='inherit' style={{ color: 'white' }}>
+              {numSentinels} Sentinel
+            </Typography>
           </div>
-          <div style={selectionRow}>
-            {initiators.map((agent) => (
-              <AgentIcon
-                size='small'
-                agent={agent}
-                onClick={() => clickAgent(agent)}
-              />
-            ))}
+          <div style={buttonRow}>
+            <Button variant='contained' onClick={handleClear}>
+              Clear All
+            </Button>
+            <Button
+              variant='contained'
+              onClick={handleShareOpen}
+              style={shareButton}
+            >
+              Share Team
+            </Button>
           </div>
-          <div style={selectionRow}>
-            {sentinels.map((agent) => (
-              <AgentIcon
-                size='small'
-                agent={agent}
-                onClick={() => clickAgent(agent)}
-              />
-            ))}
-          </div>
-          <ShareDialog
-            open={shareDialogOpen}
-            onClose={handleShareClose}
-            teamId='abcde'
-          />
+          <Paper />
         </div>
-      </div>
+        <div style={body}>
+          <div style={selectionContainer}>
+            <div style={selectionRow}>
+              {duelists.map((agent) => (
+                <AgentIcon
+                  size='small'
+                  agent={agent}
+                  onClick={() => clickAgent(agent)}
+                  winWidth={winWidth}
+                />
+              ))}
+            </div>
+            <div style={selectionRow}>
+              {controllers.map((agent) => (
+                <AgentIcon
+                  size='small'
+                  agent={agent}
+                  onClick={() => clickAgent(agent)}
+                  winWidth={winWidth}
+                />
+              ))}
+            </div>
+            <div style={selectionRow}>
+              {initiators.map((agent) => (
+                <AgentIcon
+                  size='small'
+                  agent={agent}
+                  onClick={() => clickAgent(agent)}
+                  winWidth={winWidth}
+                />
+              ))}
+            </div>
+            <div style={selectionRow}>
+              {sentinels.map((agent) => (
+                <AgentIcon
+                  size='small'
+                  agent={agent}
+                  onClick={() => clickAgent(agent)}
+                  winWidth={winWidth}
+                />
+              ))}
+            </div>
+            <ShareDialog
+              open={shareDialogOpen}
+              onClose={handleShareClose}
+              teamId='abcde'
+            />
+          </div>
+        </div>
+      </Container>
     </div>
   );
 };
