@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
 
 import GitHubIcon from '@material-ui/icons/GitHub';
 
@@ -213,6 +214,7 @@ const App = () => {
     minWidth: '350px',
     justifyContent: 'space-around',
     marginBottom: '15px',
+    color: 'white',
   };
 
   const buttonRow = {
@@ -232,8 +234,27 @@ const App = () => {
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+    },
+    main: {
+      marginBottom: '40px',
+    },
+    footer: {
+      padding: '10px',
+      marginTop: 'auto',
+      backgroundColor: 'lightgrey',
+      textAlign: 'center',
+    },
+  }));
+
+  const classes = useStyles();
+
   return (
-    <div className='App'>
+    <div className={classes.root}>
       <AppBar position='relative'>
         <Toolbar style={toolbarStyle}>
           <Typography variant='h5' color='inherit' noWrap style={logo}>
@@ -252,7 +273,7 @@ const App = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Container component='main' maxWidth='lg'>
+      <Container component='main' maxWidth='lg' className={classes.main}>
         <div style={header}>
           <div style={agentBox}>
             <AgentIcon
@@ -282,16 +303,16 @@ const App = () => {
             />
           </div>
           <div style={roleCountRow}>
-            <Typography variant='inherit' style={{ color: 'white' }}>
+            <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
               {numDuelists} Duelist
             </Typography>
-            <Typography variant='inherit' style={{ color: 'white' }}>
+            <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
               {numControllers} Controller
             </Typography>
-            <Typography variant='inherit' style={{ color: 'white' }}>
+            <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
               {numInitiators} Initiator
             </Typography>
-            <Typography variant='inherit' style={{ color: 'white' }}>
+            <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
               {numSentinels} Sentinel
             </Typography>
           </div>
@@ -359,6 +380,13 @@ const App = () => {
           </div>
         </div>
       </Container>
+      <footer className={classes.footer}>
+        <Container maxWidth='sm'>
+          <Typography variant='body1'>
+            Not associated with Riot Games.
+          </Typography>
+        </Container>
+      </footer>
     </div>
   );
 };
