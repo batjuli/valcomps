@@ -4,7 +4,6 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 
 import AgentIcon from '../components/AgentIcon';
 import ShareDialog from '../components/ShareDialog';
@@ -217,29 +216,10 @@ const MainPage = () => {
     gap: '15px',
   };
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      display: 'flex',
-      flexDirection: 'column',
-      minHeight: '100vh',
-    },
-    main: {
-      marginBottom: '40px',
-    },
-    footer: {
-      padding: '10px',
-      marginTop: 'auto',
-      backgroundColor: 'lightgrey',
-      textAlign: 'center',
-    },
-  }));
-
-  const classes = useStyles();
-
   // console.log(window.location.origin); useful for share team url
 
   return (
-    <Container component='main' maxWidth='lg' className={classes.main}>
+    <Container component='main' maxWidth='lg' className='main'>
       <div style={header}>
         <div style={agentBox}>
           <AgentIcon
