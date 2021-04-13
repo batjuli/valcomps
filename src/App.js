@@ -5,76 +5,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import MainPage from './pages/MainPage';
 import About from './pages/About';
-
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-
-import GitHubIcon from '@material-ui/icons/GitHub';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 const App = () => {
-  const toolbarStyle = {
-    backgroundColor: '#FF4655',
-  };
-
-  const logo = {
-    flexGrow: '1',
-  };
-
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      display: 'flex',
-      flexDirection: 'column',
-      minHeight: '100vh',
-    },
-    main: {
-      marginBottom: '40px',
-    },
-    footer: {
-      padding: '10px',
-      marginTop: 'auto',
-      backgroundColor: 'lightgrey',
-      textAlign: 'center',
-    },
-  }));
-
-  const classes = useStyles();
-
   return (
     <Router>
-      <div className={classes.root}>
-        <AppBar position='relative'>
-          <Toolbar style={toolbarStyle}>
-            <Typography
-              variant='h5'
-              color='inherit'
-              noWrap
-              style={logo}
-              component={Link}
-              to='/'
-            >
-              VALCOMPS
-            </Typography>
-            <Button color='inherit' component={Link} to='/about'>
-              About
-            </Button>
-            <IconButton
-              color='primary'
-              aria-label='github repository'
-              component='span'
-              style={{ color: 'white' }}
-              onClick={() =>
-                window.open('https://github.com/batjuli/valcomps', '_blank')
-              }
-            >
-              <GitHubIcon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
+      <div className='root'>
+        <NavBar />
         <Switch>
           <Route exact path='/team?:teamId'>
             <MainPage />
@@ -86,13 +24,7 @@ const App = () => {
             <MainPage />
           </Route>
         </Switch>
-        <footer className={classes.footer}>
-          <Container maxWidth='sm'>
-            <Typography variant='body1'>
-              Not associated with Riot Games.
-            </Typography>
-          </Container>
-        </footer>
+        <Footer />
       </div>
     </Router>
   );

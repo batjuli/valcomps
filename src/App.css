@@ -5,3 +5,20 @@
   font-size: calc(10px + 2vmin);
   background-color: #101823;
 }
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  margin-bottom: 40px;
+}
+
+.footer {
+  padding: 10px;
+  margin-top: auto;
+  background-color: lightslategrey;
+  text-align: center;
+}
