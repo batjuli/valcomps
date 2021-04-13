@@ -236,6 +236,8 @@ const MainPage = () => {
 
   const classes = useStyles();
 
+  // console.log(window.location.origin); useful for share team url
+
   return (
     <Container component='main' maxWidth='lg' className={classes.main}>
       <div style={header}>

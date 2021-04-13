@@ -11,6 +11,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -44,13 +45,23 @@ const App = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Router>
+    <Router>
+      <div className={classes.root}>
         <AppBar position='relative'>
           <Toolbar style={toolbarStyle}>
-            <Typography variant='h5' color='inherit' noWrap style={logo}>
+            <Typography
+              variant='h5'
+              color='inherit'
+              noWrap
+              style={logo}
+              component={Link}
+              to='/'
+            >
               VALCOMPS
             </Typography>
+            <Button color='inherit' component={Link} to='/about'>
+              About
+            </Button>
             <IconButton
               color='primary'
               aria-label='github repository'
@@ -65,7 +76,7 @@ const App = () => {
           </Toolbar>
         </AppBar>
         <Switch>
-          <Route exact path='/:teamId'>
+          <Route exact path='/team?:teamId'>
             <MainPage />
           </Route>
           <Route path='/about'>
@@ -82,8 +93,8 @@ const App = () => {
             </Typography>
           </Container>
         </footer>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 };
 

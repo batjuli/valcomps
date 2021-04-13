@@ -37,6 +37,7 @@ const ShareDialog = (props) => {
           ref={textAreaRef}
           value={teamId}
           style={{ width: '280px', height: '1em' }}
+          readOnly
         />
         <Button
           variant='contained'
