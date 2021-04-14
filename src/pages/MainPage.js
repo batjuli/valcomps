@@ -174,7 +174,6 @@ const MainPage = () => {
     flexDirection: 'column',
     alignItems: 'center',
     marginBottom: '30px',
-    marginTop: '30px',
   };
   const agentBox = {
     display: 'flex',
@@ -219,7 +218,7 @@ const MainPage = () => {
   // console.log(window.location.origin); useful for share team url
 
   return (
-    <Container component='main' maxWidth='lg' className='main'>
+    <Container component='main' maxWidth='md' className='main'>
       <div style={header}>
         <div style={agentBox}>
           <AgentIcon
