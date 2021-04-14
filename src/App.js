@@ -14,11 +14,11 @@ const App = () => {
       <div className='root'>
         <NavBar />
         <Switch>
-          <Route exact path='/team?:teamId'>
-            <MainPage />
-          </Route>
           <Route path='/about'>
             <About />
+          </Route>
+          <Route exact path='/:teamId'>
+            <MainPage />
           </Route>
           <Route path='/'>
             <MainPage />

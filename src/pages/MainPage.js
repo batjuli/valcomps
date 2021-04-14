@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useParams } from 'react-router';
+
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
@@ -25,6 +27,7 @@ import {
   cypher,
   killjoy,
   sage,
+  decode,
 } from '../util/AgentObjects';
 
 const MainPage = () => {
@@ -54,6 +57,20 @@ const MainPage = () => {
     window.addEventListener('resize', updateWidth);
     updateWidth();
     return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
+  // get team id from url
+  let { teamId } = useParams();
+  // if has teamid, load it in
+  React.useEffect(() => {
+    if (teamId) {
+      const newTeam = decode(teamId);
+      setAgent1(newTeam[0]);
+      setAgent2(newTeam[1]);
+      setAgent3(newTeam[2]);
+      setAgent4(newTeam[3]);
+      setAgent5(newTeam[4]);
+    }
   }, []);
 
   const handleShareOpen = () => {
