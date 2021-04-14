@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/valcomps/static/css/main.9fed1054.chunk.css",
+    "main.js": "/valcomps/static/js/main.deed55a5.chunk.js",
+    "main.js.map": "/valcomps/static/js/main.deed55a5.chunk.js.map",
+    "runtime-main.js": "/valcomps/static/js/runtime-main.83d4d0e2.js",
+    "runtime-main.js.map": "/valcomps/static/js/runtime-main.83d4d0e2.js.map",
+    "static/js/2.d40413f8.chunk.js": "/valcomps/static/js/2.d40413f8.chunk.js",
+    "static/js/2.d40413f8.chunk.js.map": "/valcomps/static/js/2.d40413f8.chunk.js.map",
+    "static/js/3.34c81b67.chunk.js": "/valcomps/static/js/3.34c81b67.chunk.js",
+    "static/js/3.34c81b67.chunk.js.map": "/valcomps/static/js/3.34c81b67.chunk.js.map",
+    "index.html": "/valcomps/index.html",
+    "static/css/main.9fed1054.chunk.css.map": "/valcomps/static/css/main.9fed1054.chunk.css.map",
+    "static/js/2.d40413f8.chunk.js.LICENSE.txt": "/valcomps/static/js/2.d40413f8.chunk.js.LICENSE.txt",
+    "static/media/astra.1cc2e9a7.png": "/valcomps/static/media/astra.1cc2e9a7.png",
+    "static/media/breach.7f93d266.png": "/valcomps/static/media/breach.7f93d266.png",
+    "static/media/brimstone.e4e67805.png": "/valcomps/static/media/brimstone.e4e67805.png",
+    "static/media/cypher.c8949c46.png": "/valcomps/static/media/cypher.c8949c46.png",
+    "static/media/jett.6f551b09.png": "/valcomps/static/media/jett.6f551b09.png",
+    "static/media/killjoy.6f79f337.png": "/valcomps/static/media/killjoy.6f79f337.png",
+    "static/media/omen.dec655ae.png": "/valcomps/static/media/omen.dec655ae.png",
+    "static/media/phoenix.3ac33b34.png": "/valcomps/static/media/phoenix.3ac33b34.png",
+    "static/media/raze.354cb378.png": "/valcomps/static/media/raze.354cb378.png",
+    "static/media/reyna.677ef511.png": "/valcomps/static/media/reyna.677ef511.png",
+    "static/media/sage.b62f9aed.png": "/valcomps/static/media/sage.b62f9aed.png",
+    "static/media/skye.b22fc735.png": "/valcomps/static/media/skye.b22fc735.png",
+    "static/media/sova.0e620108.png": "/valcomps/static/media/sova.0e620108.png",
+    "static/media/viper.358b1f66.png": "/valcomps/static/media/viper.358b1f66.png",
+    "static/media/yoru.ffd75c5c.png": "/valcomps/static/media/yoru.ffd75c5c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83d4d0e2.js",
+    "static/js/2.d40413f8.chunk.js",
+    "static/css/main.9fed1054.chunk.css",
+    "static/js/main.deed55a5.chunk.js"
+  ]
+}
