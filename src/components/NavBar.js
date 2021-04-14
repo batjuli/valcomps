@@ -20,7 +20,11 @@ const NavBar = () => {
     <AppBar position='relative'>
       <Toolbar style={toolbarStyle}>
         <h1
-          style={{ color: '#FFFFFF', cursor: 'pointer' }}
+          style={{
+            color: '#FFFFFF',
+            cursor: 'pointer',
+            margin: '0px',
+          }}
           onClick={handleLogoClick}
         >
           VALCOMPS
