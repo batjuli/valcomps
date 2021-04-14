@@ -138,53 +138,64 @@ export const decode = (teamId) => {
   const agentCodes = teamId.match(/.{2}/g); // regex to split into matches of any 2 characters
   // construct result array from codes
   let res = [];
+
+  // helper function for adding agent to res
+  const addAgent = (agent) => {
+    // if agent already in res, instead add empty agent
+    if (res.includes(agent)) {
+      res.push(emptyAgent);
+    } else {
+      res.push(agent);
+    }
+  };
+
   for (let code of agentCodes) {
     console.log(code);
     switch (code) {
       case jett.code:
-        res.push(jett);
+        addAgent(jett);
         break;
       case phoenix.code:
-        res.push(phoenix);
+        addAgent(phoenix);
         break;
       case raze.code:
-        res.push(raze);
+        addAgent(raze);
         break;
       case reyna.code:
-        res.push(reyna);
+        addAgent(reyna);
         break;
       case yoru.code:
-        res.push(yoru);
+        addAgent(yoru);
         break;
       case astra.code:
-        res.push(astra);
+        addAgent(astra);
         break;
       case brimstone.code:
-        res.push(brimstone);
+        addAgent(brimstone);
         break;
       case omen.code:
-        res.push(omen);
+        addAgent(omen);
         break;
       case viper.code:
-        res.push(viper);
+        addAgent(viper);
         break;
       case breach.code:
-        res.push(breach);
+        addAgent(breach);
         break;
       case skye.code:
-        res.push(skye);
+        addAgent(skye);
         break;
       case sova.code:
-        res.push(sova);
+        addAgent(sova);
         break;
       case cypher.code:
-        res.push(cypher);
+        addAgent(cypher);
         break;
       case killjoy.code:
-        res.push(killjoy);
+        addAgent(killjoy);
         break;
       case sage.code:
-        res.push(sage);
+        addAgent(sage);
         break;
       default:
         res.push(emptyAgent);
