@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/valcomps/static/css/main.9fed1054.chunk.css",
-    "main.js": "/valcomps/static/js/main.33ac246f.chunk.js",
-    "main.js.map": "/valcomps/static/js/main.33ac246f.chunk.js.map",
+    "main.js": "/valcomps/static/js/main.6269c570.chunk.js",
+    "main.js.map": "/valcomps/static/js/main.6269c570.chunk.js.map",
     "runtime-main.js": "/valcomps/static/js/runtime-main.83d4d0e2.js",
     "runtime-main.js.map": "/valcomps/static/js/runtime-main.83d4d0e2.js.map",
     "static/js/2.5eba7855.chunk.js": "/valcomps/static/js/2.5eba7855.chunk.js",
@@ -32,6 +32,6 @@
     "static/js/runtime-main.83d4d0e2.js",
     "static/js/2.5eba7855.chunk.js",
     "static/css/main.9fed1054.chunk.css",
-    "static/js/main.33ac246f.chunk.js"
+    "static/js/main.6269c570.chunk.js"
   ]
 }
