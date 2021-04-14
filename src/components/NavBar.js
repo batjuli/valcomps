@@ -20,11 +20,12 @@ const NavBar = () => {
     <AppBar position='relative'>
       <Toolbar style={toolbarStyle}>
         <h1
-          style={{ color: '#FFFFFF', flexGrow: '1', cursor: 'pointer' }}
+          style={{ color: '#FFFFFF', cursor: 'pointer' }}
           onClick={handleLogoClick}
         >
           VALCOMPS
         </h1>
+        <div style={{ flexGrow: '1' }} />
         <Button color='inherit' component={Link} to='/about'>
           About
         </Button>
