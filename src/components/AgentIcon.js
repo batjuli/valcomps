@@ -19,7 +19,7 @@ const AgentIcon = (props) => {
     }
   }
   const style = {
-    backgroundImage: 'url(' + agent + ')',
+    backgroundImage: 'url(' + agent.img + ')',
     backgroundRepeat: 'noRepeat',
     backgroundSize: 'contain',
     borderRadius: '50%',

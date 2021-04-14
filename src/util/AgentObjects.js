@@ -15,112 +15,112 @@ import cypherLogo from '../images/cypher.png';
 import killjoyLogo from '../images/killjoy.png';
 import sageLogo from '../images/sage.png';
 
-const emptyAgent = {
+export const emptyAgent = {
   img: valorantLogo,
   name: 'Agent',
   code: 'oo',
   role: null,
 };
 
-const jett = {
+export const jett = {
   img: jettLogo,
   name: 'Jett',
   code: 'je',
   role: 'Duelist',
 };
 
-const phoenix = {
+export const phoenix = {
   img: phoenixLogo,
   name: 'Phoenix',
   code: 'ph',
   role: 'Duelist',
 };
 
-const raze = {
+export const raze = {
   img: razeLogo,
   name: 'Raze',
   code: 'ra',
   role: 'Duelist',
 };
 
-const reyna = {
+export const reyna = {
   img: reynaLogo,
   name: 'Reyna',
   code: 're',
   role: 'Duelist',
 };
 
-const yoru = {
+export const yoru = {
   img: yoruLogo,
   name: 'Yoru',
   code: 'yo',
   role: 'Duelist',
 };
 
-const astra = {
+export const astra = {
   img: astraLogo,
   name: 'Astra',
   code: 'as',
   role: 'Controller',
 };
 
-const brimstone = {
+export const brimstone = {
   img: brimstoneLogo,
   name: 'Brimstone',
   code: 'bs',
   role: 'Controller',
 };
 
-const omen = {
+export const omen = {
   img: omenLogo,
   name: 'Omen',
   code: 'om',
   role: 'Controller',
 };
 
-const viper = {
+export const viper = {
   img: viperLogo,
   name: 'Viper',
   code: 'vi',
   role: 'Controller',
 };
 
-const breach = {
+export const breach = {
   img: breachLogo,
   name: 'Breach',
   code: 'br',
   role: 'Initiator',
 };
 
-const skye = {
+export const skye = {
   img: skyeLogo,
   name: 'Skye',
   code: 'sk',
   role: 'Initiator',
 };
 
-const sova = {
+export const sova = {
   img: sovaLogo,
   name: 'Sova',
   code: 'so',
   role: 'Initiator',
 };
 
-const cypher = {
+export const cypher = {
   img: cypherLogo,
   name: 'Cypher',
   code: 'cy',
   role: 'Sentinel',
 };
 
-const killjoy = {
+export const killjoy = {
   img: killjoyLogo,
   name: 'Killjoy',
   code: 'kj',
   role: 'Sentinel',
 };
 
-const sage = {
+export const sage = {
   img: sageLogo,
   name: 'Sage',
   code: 'sa',
