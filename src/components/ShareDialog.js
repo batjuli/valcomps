@@ -24,7 +24,7 @@ const ShareDialog = (props) => {
 
   let teamUrl =
     window.location.origin +
-    '/valcomps/' + // added "valcomps/" for gh pages to work
+    '/valcomps/#/' + // added "valcomps/#/" for gh pages to work
     agent1.code +
     agent2.code +
     agent3.code +
