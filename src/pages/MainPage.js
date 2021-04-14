@@ -59,20 +59,6 @@ const MainPage = () => {
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
-  // get team id from url
-  let { teamId } = useParams();
-  // if has teamid, load it in
-  React.useEffect(() => {
-    if (teamId) {
-      const newTeam = decode(teamId);
-      setAgent1(newTeam[0]);
-      setAgent2(newTeam[1]);
-      setAgent3(newTeam[2]);
-      setAgent4(newTeam[3]);
-      setAgent5(newTeam[4]);
-    }
-  }, []);
-
   const handleShareOpen = () => {
     setShareDialogOpen(true);
   };
@@ -114,48 +100,20 @@ const MainPage = () => {
     } else if (agent5 === agent) {
       setAgent5(emptyAgent);
     }
-    // subtract from agent count
-    if (duelists.includes(agent)) {
-      setNumDuelists(numDuelists - 1);
-    } else if (controllers.includes(agent)) {
-      setNumControllers(numControllers - 1);
-    } else if (initiators.includes(agent)) {
-      setNumInitiators(numInitiators - 1);
-    } else if (sentinels.includes(agent)) {
-      setNumSentinels(numSentinels - 1);
-    }
-  };
-
-  // adds to agent count depending on role
-  const incrementRole = (agent) => {
-    if (duelists.includes(agent)) {
-      setNumDuelists(numDuelists + 1);
-    } else if (controllers.includes(agent)) {
-      setNumControllers(numControllers + 1);
-    } else if (initiators.includes(agent)) {
-      setNumInitiators(numInitiators + 1);
-    } else if (sentinels.includes(agent)) {
-      setNumSentinels(numSentinels + 1);
-    }
   };
 
   // adds agent only if there is space
   const addAgent = (agent) => {
     if (agent1 === emptyAgent) {
       setAgent1(agent);
-      incrementRole(agent);
     } else if (agent2 === emptyAgent) {
       setAgent2(agent);
-      incrementRole(agent);
     } else if (agent3 === emptyAgent) {
       setAgent3(agent);
-      incrementRole(agent);
     } else if (agent4 === emptyAgent) {
       setAgent4(agent);
-      incrementRole(agent);
     } else if (agent5 === emptyAgent) {
       setAgent5(agent);
-      incrementRole(agent);
     }
   };
 
@@ -182,6 +140,45 @@ const MainPage = () => {
     setNumControllers(0);
     setNumSentinels(0);
   };
+
+  // get team id from url
+  let { teamId } = useParams();
+  // if has teamid, load it in
+  React.useEffect(() => {
+    if (teamId) {
+      const newTeam = decode(teamId);
+      // select the agents
+      setAgent1(newTeam[0]);
+      setAgent2(newTeam[1]);
+      setAgent3(newTeam[2]);
+      setAgent4(newTeam[3]);
+      setAgent5(newTeam[4]);
+    }
+  }, [teamId]);
+
+  // use effect hook for whenever an agent is changed
+  React.useEffect(() => {
+    let nDuel = 0;
+    let nCont = 0;
+    let nInit = 0;
+    let nSent = 0;
+    for (let agent of [agent1, agent2, agent3, agent4, agent5]) {
+      if (duelists.includes(agent)) {
+        nDuel += 1;
+      } else if (controllers.includes(agent)) {
+        nCont += 1;
+      } else if (initiators.includes(agent)) {
+        nInit += 1;
+      } else if (sentinels.includes(agent)) {
+        nSent += 1;
+      }
+    }
+    setNumDuelists(nDuel);
+    setNumControllers(nCont);
+    setNumInitiators(nInit);
+    setNumSentinels(nSent);
+    // eslint-disable-next-line
+  }, [agent1, agent2, agent3, agent4, agent5]);
 
   const header = {
     display: 'flex',
