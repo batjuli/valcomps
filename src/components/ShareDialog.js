@@ -22,11 +22,9 @@ const ShareDialog = (props) => {
     gap: '10px',
   };
 
-  // console.log(window.location.origin); useful for share team url
-
   let teamUrl =
     window.location.origin +
-    '/' +
+    '/valcomps/' + // added "valcomps/" for gh pages to work
     agent1.code +
     agent2.code +
     agent3.code +
@@ -48,7 +46,7 @@ const ShareDialog = (props) => {
         <textarea
           ref={textAreaRef}
           value={teamUrl}
-          style={{ width: '280px', height: '1em' }}
+          style={{ width: '280px', height: '2em' }}
           readOnly
         />
         <Button

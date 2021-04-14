@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // use HashRouter for github pages
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+//import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import MainPage from './pages/MainPage';
 import About from './pages/About';
@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <Router basename='/'>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className='root'>
         <NavBar />
         <Switch>
