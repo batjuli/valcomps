@@ -212,8 +212,6 @@ const MainPage = () => {
     gap: '15px',
   };
 
-  // console.log(window.location.origin); useful for share team url
-
   return (
     <Container component='main' maxWidth='md' className='main'>
       <div style={header}>
@@ -317,7 +315,11 @@ const MainPage = () => {
           <ShareDialog
             open={shareDialogOpen}
             onClose={handleShareClose}
-            teamId='abcde'
+            agent1={agent1}
+            agent2={agent2}
+            agent3={agent3}
+            agent4={agent4}
+            agent5={agent5}
           />
         </div>
       </div>
