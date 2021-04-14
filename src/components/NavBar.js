@@ -1,31 +1,30 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 const NavBar = () => {
+  const history = useHistory();
   const toolbarStyle = {
     backgroundColor: '#FF4655',
+  };
+  const handleLogoClick = () => {
+    history.push('/');
   };
   return (
     <AppBar position='relative'>
       <Toolbar style={toolbarStyle}>
-        <Typography
-          variant='h5'
-          color='inherit'
-          noWrap
-          style={{ flexGrow: '1' }}
-          component={Link}
-          to='/'
+        <h1
+          style={{ color: '#FFFFFF', flexGrow: '1', cursor: 'pointer' }}
+          onClick={handleLogoClick}
         >
           VALCOMPS
-        </Typography>
+        </h1>
         <Button color='inherit' component={Link} to='/about'>
           About
         </Button>
