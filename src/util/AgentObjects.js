@@ -14,6 +14,8 @@ import sovaLogo from '../images/sova.png';
 import cypherLogo from '../images/cypher.png';
 import killjoyLogo from '../images/killjoy.png';
 import sageLogo from '../images/sage.png';
+import kayoLogo from '../images/kayo.png';
+import chamberLogo from '../images/chamber.png';
 
 export const emptyAgent = {
   img: valorantLogo,
@@ -127,6 +129,20 @@ export const sage = {
   role: 'Sentinel',
 };
 
+export const kayo = {
+  img: kayoLogo,
+  name: 'Kayo',
+  code: 'ka',
+  role: 'Initiator',
+};
+
+export const chamber = {
+  img: chamberLogo,
+  name: 'Chamber',
+  code: 'ch',
+  role: 'Sentinel',
+};
+
 // function for decoding a team id (10 letters, each 2 represents an agent)
 export const decode = (teamId) => {
   console.log('decoding');
@@ -196,6 +212,12 @@ export const decode = (teamId) => {
         break;
       case sage.code:
         addAgent(sage);
+        break;
+      case kayo.code:
+        addAgent(kayo);
+        break;
+      case chamber.code:
+        addAgent(chamber);
         break;
       default:
         res.push(emptyAgent);

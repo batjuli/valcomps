@@ -27,6 +27,8 @@ import {
   cypher,
   killjoy,
   sage,
+  kayo,
+  chamber,
   decode,
 } from '../util/AgentObjects';
 
@@ -70,8 +72,8 @@ const MainPage = () => {
   // agent arrays
   const duelists = [jett, phoenix, raze, reyna, yoru];
   const controllers = [astra, brimstone, omen, viper];
-  const initiators = [breach, skye, sova];
-  const sentinels = [cypher, killjoy, sage];
+  const initiators = [breach, kayo, skye, sova];
+  const sentinels = [chamber, cypher, killjoy, sage];
 
   const alreadySelected = (agent) => {
     if (
