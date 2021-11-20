@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/valcomps/static/css/main.9fed1054.chunk.css",
-    "main.js": "/valcomps/static/js/main.6269c570.chunk.js",
-    "main.js.map": "/valcomps/static/js/main.6269c570.chunk.js.map",
+    "main.js": "/valcomps/static/js/main.b62c3ebd.chunk.js",
+    "main.js.map": "/valcomps/static/js/main.b62c3ebd.chunk.js.map",
     "runtime-main.js": "/valcomps/static/js/runtime-main.83d4d0e2.js",
     "runtime-main.js.map": "/valcomps/static/js/runtime-main.83d4d0e2.js.map",
     "static/js/2.5eba7855.chunk.js": "/valcomps/static/js/2.5eba7855.chunk.js",
@@ -15,8 +15,10 @@
     "static/media/astra.1cc2e9a7.png": "/valcomps/static/media/astra.1cc2e9a7.png",
     "static/media/breach.7f93d266.png": "/valcomps/static/media/breach.7f93d266.png",
     "static/media/brimstone.e4e67805.png": "/valcomps/static/media/brimstone.e4e67805.png",
+    "static/media/chamber.2e89f445.png": "/valcomps/static/media/chamber.2e89f445.png",
     "static/media/cypher.c8949c46.png": "/valcomps/static/media/cypher.c8949c46.png",
     "static/media/jett.6f551b09.png": "/valcomps/static/media/jett.6f551b09.png",
+    "static/media/kayo.7a43985e.png": "/valcomps/static/media/kayo.7a43985e.png",
     "static/media/killjoy.6f79f337.png": "/valcomps/static/media/killjoy.6f79f337.png",
     "static/media/omen.dec655ae.png": "/valcomps/static/media/omen.dec655ae.png",
     "static/media/phoenix.3ac33b34.png": "/valcomps/static/media/phoenix.3ac33b34.png",
@@ -32,6 +34,6 @@
     "static/js/runtime-main.83d4d0e2.js",
     "static/js/2.5eba7855.chunk.js",
     "static/css/main.9fed1054.chunk.css",
-    "static/js/main.6269c570.chunk.js"
+    "static/js/main.b62c3ebd.chunk.js"
   ]
 }
