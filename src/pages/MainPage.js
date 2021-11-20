@@ -217,7 +217,7 @@ const MainPage = () => {
   const roleCountRow = {
     display: 'flex',
     width: '90vw',
-    maxWidth: '600px',
+    maxWidth: '700px',
     minWidth: '350px',
     justifyContent: 'space-around',
     marginBottom: '15px',
