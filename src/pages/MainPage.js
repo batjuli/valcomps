@@ -258,16 +258,17 @@ const MainPage = () => {
         </div>
         <div style={roleCountRow}>
           <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
-            {numDuelists} Duelist
+            {numDuelists} {numDuelists === 1 ? 'Duelist' : 'Duelists'}
           </Typography>
           <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
-            {numControllers} Controller
+            {numControllers}{' '}
+            {numControllers === 1 ? 'Controller' : 'Controllers'}
           </Typography>
           <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
-            {numInitiators} Initiator
+            {numInitiators} {numInitiators === 1 ? 'Initiator' : 'Initiators'}
           </Typography>
           <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
-            {numSentinels} Sentinel
+            {numSentinels} {numSentinels === 1 ? 'Sentinel' : 'Sentinels'}
           </Typography>
         </div>
         <div style={buttonRow}>
