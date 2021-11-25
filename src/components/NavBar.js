@@ -17,7 +17,7 @@ const NavBar = () => {
     history.push('/');
   };
   return (
-    <AppBar position='relative'>
+    <AppBar position='sticky'>
       <Toolbar style={toolbarStyle}>
         <h1
           style={{
