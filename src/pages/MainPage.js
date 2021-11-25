@@ -55,7 +55,6 @@ const MainPage = () => {
   React.useEffect(() => {
     const updateWidth = () => {
       setWinWidth(window.innerWidth);
-      console.log(window.innerWidth);
     };
     window.addEventListener('resize', updateWidth);
     updateWidth();

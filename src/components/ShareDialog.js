@@ -11,7 +11,6 @@ const ShareDialog = (props) => {
     // Get the text area by its ref
     textAreaRef.current.select();
     document.execCommand('copy');
-    console.log(agent1.code);
   };
 
   const container = {
