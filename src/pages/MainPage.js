@@ -35,6 +35,7 @@ import {
   kayo,
   chamber,
   decode,
+  getRandom,
 } from '../util/AgentObjects';
 
 const MainPage = () => {
@@ -145,6 +146,16 @@ const MainPage = () => {
     setNumInitiators(0);
     setNumControllers(0);
     setNumSentinels(0);
+  };
+
+  // randomise team
+  const handleRandomise = () => {
+    const randomAgents = getRandom();
+    setAgent1(randomAgents[0]);
+    setAgent2(randomAgents[1]);
+    setAgent3(randomAgents[2]);
+    setAgent4(randomAgents[3]);
+    setAgent5(randomAgents[4]);
   };
 
   // get team id from url
@@ -269,7 +280,11 @@ const MainPage = () => {
             >
               Share Team
             </Button>
-            <Button variant='contained' startIcon={<ShuffleIcon />}>
+            <Button
+              variant='contained'
+              onClick={handleRandomise}
+              startIcon={<ShuffleIcon />}
+            >
               Randomise
             </Button>
           </div>
@@ -285,7 +300,7 @@ const MainPage = () => {
             >
               <ShareIcon />
             </Button>
-            <Button variant='contained'>
+            <Button variant='contained' onClick={handleRandomise}>
               <ShuffleIcon />
             </Button>
           </div>

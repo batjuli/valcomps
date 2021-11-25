@@ -259,3 +259,38 @@ export const decode = (teamId) => {
   }
   return res;
 };
+
+const AGENTS = [
+  jett,
+  phoenix,
+  raze,
+  reyna,
+  yoru,
+  astra,
+  brimstone,
+  omen,
+  viper,
+  breach,
+  kayo,
+  skye,
+  sova,
+  chamber,
+  cypher,
+  killjoy,
+  sage,
+];
+
+// function for getting a random team comp
+export const getRandom = () => {
+  let potentials = [...AGENTS];
+  let res = [];
+  while (res.length < 5) {
+    // generate random index
+    let ix = Math.floor(Math.random() * (potentials.length - 1));
+    // add the ixth agent
+    res.push(potentials[ix]);
+    // remove the ixth agent from potentials
+    potentials.splice(ix, 1);
+  }
+  return res;
+};
