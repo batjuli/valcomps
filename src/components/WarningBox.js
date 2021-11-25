@@ -141,8 +141,8 @@ const body = {
   color: 'white',
   fontSize: '20px',
   marginTop: '40px',
-  marginLeft: '10px',
-  marginRight: '10px',
+  marginLeft: '5px',
+  marginRight: '5px',
   alignItems: 'center',
 };
 
