@@ -192,7 +192,7 @@ const MainPage = () => {
   return (
     <Container component='main' maxWidth='md' className='main'>
       <div style={header}>
-        <WarningBox warnings={[warnings.flashes]} />
+        <WarningBox warnings={[warnings.flashes, warnings.smokes]} />
         <div style={agentBox}>
           <AgentIcon
             agent={agent1}

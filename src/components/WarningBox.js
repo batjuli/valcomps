@@ -2,6 +2,7 @@ import React from 'react';
 
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import Typography from '@material-ui/core/Typography';
 
 const height = 110;
 const width = 370;
@@ -34,10 +35,20 @@ const WarningBox = ({ warnings }) => {
         {warnings.length} {warnings.length === 1 ? 'warning' : 'warnings'}
       </div>
       {warnings.length === 0 ? (
-        <div style={body}>No warnings, this is a well balanced team!</div>
+        <div style={body}>
+          <Typography
+            style={{ fontSize: 'calc(10px + 1.2vmin)', textAlign: 'center' }}
+          >
+            No warnings, this is a well balanced team!
+          </Typography>
+        </div>
       ) : (
         <div style={body}>
-          {warnings[curr]}
+          <Typography
+            style={{ fontSize: 'calc(10px + 1.2vmin)', textAlign: 'center' }}
+          >
+            {warnings[curr]}
+          </Typography>
           <div style={arrows}>
             <KeyboardArrowUpIcon onClick={handleClickUp} />
             <KeyboardArrowDownIcon onClick={handleClickDown} />
@@ -89,6 +100,7 @@ const arrows = {
   display: 'flex',
   flexDirection: 'column',
   gap: '10px',
+  marginLeft: '5px',
 };
 
 export default WarningBox;
