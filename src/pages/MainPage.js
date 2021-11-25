@@ -33,15 +33,6 @@ import {
   decode,
 } from '../util/AgentObjects';
 
-const warnings = {
-  flashes: 'No flashes: this team may struggle to enter a site',
-  smokes: 'No smokes: this team may struggle to block line of sight',
-  duelists: 'No duelists: this team may struggle to win engagements',
-  controllers: 'No controllers: this team may struggle to slice up territory',
-  initiators: 'No initiators: this team may struggle to enter contested ground',
-  sentinels: 'No sentinels: this team may struggle to lock areas down',
-};
-
 const MainPage = () => {
   // agent selection states
   const [agent1, setAgent1] = React.useState(emptyAgent);
@@ -195,7 +186,13 @@ const MainPage = () => {
   return (
     <Container component='main' maxWidth='md' className='main'>
       <div style={header}>
-        <WarningBox warnings={[warnings.flashes, warnings.smokes]} />
+        <WarningBox
+          agent1={agent1}
+          agent2={agent2}
+          agent3={agent3}
+          agent4={agent4}
+          agent5={agent5}
+        />
         <div style={agentBox}>
           <AgentIcon
             agent={agent1}

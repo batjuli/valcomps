@@ -8,7 +8,61 @@ const height = 110;
 const width = 370;
 const borderSize = 5;
 
-const WarningBox = ({ warnings }) => {
+const allWarnings = {
+  duelists: 'No duelists: this team may struggle to win engagements',
+  controllers: 'No controllers: this team may struggle to slice up territory',
+  initiators: 'No initiators: this team may struggle to enter contested ground',
+  sentinels: 'No sentinels: this team may struggle to lock areas down',
+  flashes: 'No flashes: this team may struggle to contest angles',
+  smokes: 'No smokes: this team may struggle to block line of sight',
+};
+
+// removes a specific message/value from an array
+const removeMessage = (arr, val) => {
+  const ix = arr.indexOf(val);
+  if (ix > -1) {
+    arr.splice(ix, 1);
+  }
+};
+
+const WarningBox = ({ agent1, agent2, agent3, agent4, agent5 }) => {
+  // state for warnings
+  const [warnings, setWarnings] = React.useState(Object.values(allWarnings));
+
+  // useeffect for checking warnings after agent change
+  React.useEffect(() => {
+    let _warnings = Object.values(allWarnings);
+    // iterate through agents and update warnings
+    for (let agent of [agent1, agent2, agent3, agent4, agent5]) {
+      // check role
+      switch (agent.role) {
+        case 'Duelist':
+          removeMessage(_warnings, allWarnings.duelists);
+          break;
+        case 'Controller':
+          removeMessage(_warnings, allWarnings.controllers);
+          break;
+        case 'Initiator':
+          removeMessage(_warnings, allWarnings.initiators);
+          break;
+        case 'Sentinel':
+          removeMessage(_warnings, allWarnings.sentinels);
+          break;
+        default:
+          break;
+      }
+      // check smokes
+      if (agent.smoke) {
+        removeMessage(_warnings, allWarnings.smokes);
+      }
+      // check flashes
+      if (agent.flash) {
+        removeMessage(_warnings, allWarnings.flashes);
+      }
+    }
+    setWarnings(_warnings);
+  }, [agent1, agent2, agent3, agent4, agent5]);
+
   // state for what warning is currently visible
   const [curr, setCurr] = React.useState(0);
 
