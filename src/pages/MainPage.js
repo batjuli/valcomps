@@ -36,7 +36,10 @@ import {
 const warnings = {
   flashes: 'No flashes: this team may struggle to enter a site',
   smokes: 'No smokes: this team may struggle to block line of sight',
-  sentinels: 'No sentinels: this team may struggle to slow enemies down',
+  duelists: 'No duelists: this team may struggle to win engagements',
+  controllers: 'No controllers: this team may struggle to slice up territory',
+  initiators: 'No initiators: this team may struggle to enter contested ground',
+  sentinels: 'No sentinels: this team may struggle to lock areas down',
 };
 
 const MainPage = () => {
