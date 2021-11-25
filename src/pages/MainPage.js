@@ -183,7 +183,12 @@ const MainPage = () => {
   }, [agent1, agent2, agent3, agent4, agent5]);
 
   return (
-    <Container component='main' maxWidth='md' className='main'>
+    <Container
+      component='main'
+      maxWidth='md'
+      className='main'
+      style={{ marginTop: '30px' }}
+    >
       <div style={header}>
         <WarningBox
           agent1={agent1}
@@ -220,17 +225,25 @@ const MainPage = () => {
           />
         </div>
         <div style={roleCountRow}>
-          <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
+          <Typography
+            style={{ textAlign: 'center', fontSize: 'calc(10px + 2vmin)' }}
+          >
             {numDuelists} {numDuelists === 1 ? 'Duelist' : 'Duelists'}
           </Typography>
-          <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
+          <Typography
+            style={{ textAlign: 'center', fontSize: 'calc(10px + 2vmin)' }}
+          >
             {numControllers}{' '}
             {numControllers === 1 ? 'Controller' : 'Controllers'}
           </Typography>
-          <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
+          <Typography
+            style={{ textAlign: 'center', fontSize: 'calc(10px + 2vmin)' }}
+          >
             {numInitiators} {numInitiators === 1 ? 'Initiator' : 'Initiators'}
           </Typography>
-          <Typography style={{ fontSize: 'calc(10px + 2vmin)' }}>
+          <Typography
+            style={{ textAlign: 'center', fontSize: 'calc(10px + 2vmin)' }}
+          >
             {numSentinels} {numSentinels === 1 ? 'Sentinel' : 'Sentinels'}
           </Typography>
         </div>
@@ -309,7 +322,7 @@ const header = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  marginBottom: '30px',
+  marginBottom: '20px',
 };
 const agentBox = {
   display: 'flex',
@@ -318,7 +331,7 @@ const agentBox = {
   minWidth: '350px',
   justifyContent: 'space-around',
   marginBottom: '15px',
-  marginTop: '30px',
+  marginTop: '20px',
 };
 const body = {
   display: 'flex',
@@ -328,11 +341,11 @@ const body = {
 const selectionContainer = {
   display: 'flex',
   flexDirection: 'column',
-  gap: '15px',
+  gap: '10px',
 };
 const selectionRow = {
   display: 'flex',
-  gap: '15px',
+  gap: '10px',
 };
 const shareButton = {
   backgroundColor: '#FF4655',
@@ -349,7 +362,7 @@ const roleCountRow = {
 };
 const buttonRow = {
   display: 'flex',
-  gap: '15px',
+  gap: '20px',
 };
 
 export default MainPage;

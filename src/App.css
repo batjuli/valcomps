@@ -18,8 +18,8 @@
 }
 
 .footer {
-  padding: 10px;
+  padding: 5px;
   margin-top: auto;
-  background-color: lightslategrey;
   text-align: center;
+  color: #5882bb;
 }

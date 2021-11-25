@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import Typography from '@material-ui/core/Typography';
 
 const height = 110;
-const width = 370;
+const width = 350;
 const borderSize = 5;
 
 const allWarnings = {
