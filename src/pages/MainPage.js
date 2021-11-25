@@ -7,6 +7,10 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
+import ShuffleIcon from '@material-ui/icons/Shuffle';
+import ShareIcon from '@material-ui/icons/Share';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 import AgentIcon from '../components/AgentIcon';
 import ShareDialog from '../components/ShareDialog';
 import WarningBox from '../components/WarningBox';
@@ -247,18 +251,46 @@ const MainPage = () => {
             {numSentinels} {numSentinels === 1 ? 'Sentinel' : 'Sentinels'}
           </Typography>
         </div>
-        <div style={buttonRow}>
-          <Button variant='contained' onClick={handleClear}>
-            Clear All
-          </Button>
-          <Button
-            variant='contained'
-            onClick={handleShareOpen}
-            style={shareButton}
-          >
-            Share Team
-          </Button>
-        </div>
+        {/* Button types depends on window size */}
+        {winWidth > 610 ? (
+          <div style={buttonRow}>
+            <Button
+              variant='contained'
+              onClick={handleClear}
+              startIcon={<DeleteIcon />}
+            >
+              Clear All
+            </Button>
+            <Button
+              variant='contained'
+              onClick={handleShareOpen}
+              style={shareButton}
+              startIcon={<ShareIcon />}
+            >
+              Share Team
+            </Button>
+            <Button variant='contained' startIcon={<ShuffleIcon />}>
+              Randomise
+            </Button>
+          </div>
+        ) : (
+          <div style={buttonRow}>
+            <Button variant='contained' onClick={handleClear}>
+              <DeleteIcon />
+            </Button>
+            <Button
+              variant='contained'
+              onClick={handleShareOpen}
+              style={shareButton}
+            >
+              <ShareIcon />
+            </Button>
+            <Button variant='contained'>
+              <ShuffleIcon />
+            </Button>
+          </div>
+        )}
+
         <Paper />
       </div>
       <div style={body}>
