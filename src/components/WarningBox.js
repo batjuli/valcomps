@@ -33,13 +33,17 @@ const WarningBox = ({ warnings }) => {
       <div style={header}>
         {warnings.length} {warnings.length === 1 ? 'warning' : 'warnings'}
       </div>
-      <div style={body}>
-        {warnings[curr]}
-        <div style={arrows}>
-          <KeyboardArrowUpIcon onClick={handleClickUp} />
-          <KeyboardArrowDownIcon onClick={handleClickDown} />
+      {warnings.length === 0 ? (
+        <div style={body}>No warnings, this is a well balanced team!</div>
+      ) : (
+        <div style={body}>
+          {warnings[curr]}
+          <div style={arrows}>
+            <KeyboardArrowUpIcon onClick={handleClickUp} />
+            <KeyboardArrowDownIcon onClick={handleClickDown} />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
