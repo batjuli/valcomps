@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/valcomps/static/css/main.9fed1054.chunk.css",
-    "main.js": "/valcomps/static/js/main.b1383f2c.chunk.js",
-    "main.js.map": "/valcomps/static/js/main.b1383f2c.chunk.js.map",
-    "runtime-main.js": "/valcomps/static/js/runtime-main.83d4d0e2.js",
-    "runtime-main.js.map": "/valcomps/static/js/runtime-main.83d4d0e2.js.map",
-    "static/js/2.5eba7855.chunk.js": "/valcomps/static/js/2.5eba7855.chunk.js",
-    "static/js/2.5eba7855.chunk.js.map": "/valcomps/static/js/2.5eba7855.chunk.js.map",
-    "static/js/3.34c81b67.chunk.js": "/valcomps/static/js/3.34c81b67.chunk.js",
-    "static/js/3.34c81b67.chunk.js.map": "/valcomps/static/js/3.34c81b67.chunk.js.map",
+    "main.css": "/valcomps/static/css/main.5f35353a.chunk.css",
+    "main.js": "/valcomps/static/js/main.75ec50e4.chunk.js",
+    "main.js.map": "/valcomps/static/js/main.75ec50e4.chunk.js.map",
+    "runtime-main.js": "/valcomps/static/js/runtime-main.1fc25cea.js",
+    "runtime-main.js.map": "/valcomps/static/js/runtime-main.1fc25cea.js.map",
+    "static/js/2.e8e5e172.chunk.js": "/valcomps/static/js/2.e8e5e172.chunk.js",
+    "static/js/2.e8e5e172.chunk.js.map": "/valcomps/static/js/2.e8e5e172.chunk.js.map",
+    "static/js/3.083e644c.chunk.js": "/valcomps/static/js/3.083e644c.chunk.js",
+    "static/js/3.083e644c.chunk.js.map": "/valcomps/static/js/3.083e644c.chunk.js.map",
     "index.html": "/valcomps/index.html",
-    "static/css/main.9fed1054.chunk.css.map": "/valcomps/static/css/main.9fed1054.chunk.css.map",
-    "static/js/2.5eba7855.chunk.js.LICENSE.txt": "/valcomps/static/js/2.5eba7855.chunk.js.LICENSE.txt",
+    "static/css/main.5f35353a.chunk.css.map": "/valcomps/static/css/main.5f35353a.chunk.css.map",
+    "static/js/2.e8e5e172.chunk.js.LICENSE.txt": "/valcomps/static/js/2.e8e5e172.chunk.js.LICENSE.txt",
     "static/media/astra.1cc2e9a7.png": "/valcomps/static/media/astra.1cc2e9a7.png",
     "static/media/breach.7f93d266.png": "/valcomps/static/media/breach.7f93d266.png",
     "static/media/brimstone.e4e67805.png": "/valcomps/static/media/brimstone.e4e67805.png",
@@ -31,9 +31,9 @@
     "static/media/yoru.ffd75c5c.png": "/valcomps/static/media/yoru.ffd75c5c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.83d4d0e2.js",
-    "static/js/2.5eba7855.chunk.js",
-    "static/css/main.9fed1054.chunk.css",
-    "static/js/main.b1383f2c.chunk.js"
+    "static/js/runtime-main.1fc25cea.js",
+    "static/js/2.e8e5e172.chunk.js",
+    "static/css/main.5f35353a.chunk.css",
+    "static/js/main.75ec50e4.chunk.js"
   ]
 }
