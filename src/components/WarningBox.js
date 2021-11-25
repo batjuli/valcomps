@@ -1,13 +1,12 @@
 import React from 'react';
 
-// import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-// import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 const height = 110;
 const width = 370;
 const borderSize = 5;
 
-const numWarnings = 3;
 const warnings = [
   'No flashes: this team may struggle to enter a site',
   'No smokes: this team may struggle to block line of sight',
@@ -15,11 +14,36 @@ const warnings = [
 ];
 
 const WarningBox = () => {
+  // state for what warning is currently visible
+  const [curr, setCurr] = React.useState(0);
+
+  const handleClickUp = () => {
+    if (curr === 0) {
+      setCurr(warnings.length - 1);
+    } else {
+      setCurr(curr - 1);
+    }
+  };
+
+  const handleClickDown = () => {
+    if (curr === warnings.length - 1) {
+      setCurr(0);
+    } else {
+      setCurr(curr + 1);
+    }
+  };
+
   return (
     <div style={container}>
       <div style={cutOut}></div>
-      <div style={header}>3 warnings</div>
-      <div style={body}>No flashes: this team may struggle to take a site</div>
+      <div style={header}>{warnings.length} warnings</div>
+      <div style={body}>
+        {warnings[curr]}
+        <div style={arrows}>
+          <KeyboardArrowUpIcon onClick={handleClickUp} />
+          <KeyboardArrowDownIcon onClick={handleClickDown} />
+        </div>
+      </div>
     </div>
   );
 };
@@ -52,10 +76,19 @@ const header = {
 };
 
 const body = {
+  display: 'flex',
   color: 'white',
   fontSize: '20px',
   marginTop: '40px',
   marginLeft: '10px',
+  marginRight: '10px',
+  alignItems: 'center',
+};
+
+const arrows = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '10px',
 };
 
 export default WarningBox;
