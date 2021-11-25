@@ -185,8 +185,8 @@ const MainPage = () => {
 
   return (
     <Container component='main' maxWidth='md' className='main'>
-      <WarningBox />
       <div style={header}>
+        <WarningBox />
         <div style={agentBox}>
           <AgentIcon
             agent={agent1}
@@ -313,6 +313,7 @@ const agentBox = {
   minWidth: '350px',
   justifyContent: 'space-around',
   marginBottom: '15px',
+  marginTop: '30px',
 };
 const body = {
   display: 'flex',
