@@ -36,17 +36,13 @@ const WarningBox = ({ warnings }) => {
       </div>
       {warnings.length === 0 ? (
         <div style={body}>
-          <Typography
-            style={{ fontSize: 'calc(10px + 1.2vmin)', textAlign: 'center' }}
-          >
+          <Typography style={{ textAlign: 'center' }} variant='subtitle'>
             No warnings, this is a well balanced team!
           </Typography>
         </div>
       ) : (
         <div style={body}>
-          <Typography
-            style={{ fontSize: 'calc(10px + 1.2vmin)', textAlign: 'center' }}
-          >
+          <Typography style={{ textAlign: 'center' }} variant='subtitle'>
             {warnings[curr]}
           </Typography>
           <div style={arrows}>
