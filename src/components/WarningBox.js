@@ -100,8 +100,14 @@ const WarningBox = ({ agent1, agent2, agent3, agent4, agent5 }) => {
             {warnings[curr]}
           </Typography>
           <div style={arrows}>
-            <KeyboardArrowUpIcon onClick={handleClickUp} />
-            <KeyboardArrowDownIcon onClick={handleClickDown} />
+            <KeyboardArrowUpIcon
+              onClick={handleClickUp}
+              style={{ cursor: 'pointer' }}
+            />
+            <KeyboardArrowDownIcon
+              onClick={handleClickDown}
+              style={{ cursor: 'pointer' }}
+            />
           </div>
         </div>
       )}
