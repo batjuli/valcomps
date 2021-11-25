@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 
 import AgentIcon from '../components/AgentIcon';
 import ShareDialog from '../components/ShareDialog';
+import WarningBox from '../components/WarningBox';
 
 import {
   emptyAgent,
@@ -182,55 +183,16 @@ const MainPage = () => {
     // eslint-disable-next-line
   }, [agent1, agent2, agent3, agent4, agent5]);
 
-  const header = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginBottom: '30px',
-  };
-  const agentBox = {
-    display: 'flex',
-    width: '90vw',
-    maxWidth: '800px',
-    minWidth: '350px',
-    justifyContent: 'space-around',
-    marginBottom: '15px',
-  };
-  const body = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  };
-  const selectionContainer = {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '15px',
-  };
-  const selectionRow = {
-    display: 'flex',
-    gap: '15px',
-  };
-  const shareButton = {
-    backgroundColor: '#FF4655',
-    color: '#EBE7E0',
-  };
-  const roleCountRow = {
-    display: 'flex',
-    width: '90vw',
-    maxWidth: '700px',
-    minWidth: '350px',
-    justifyContent: 'space-around',
-    marginBottom: '15px',
-    color: 'white',
-  };
-  const buttonRow = {
-    display: 'flex',
-    gap: '15px',
-  };
-
   return (
     <Container component='main' maxWidth='md' className='main'>
       <div style={header}>
+        <WarningBox
+          agent1={agent1}
+          agent2={agent2}
+          agent3={agent3}
+          agent4={agent4}
+          agent5={agent5}
+        />
         <div style={agentBox}>
           <AgentIcon
             agent={agent1}
@@ -342,6 +304,53 @@ const MainPage = () => {
       </div>
     </Container>
   );
+};
+
+const header = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  marginBottom: '30px',
+};
+const agentBox = {
+  display: 'flex',
+  width: '90vw',
+  maxWidth: '800px',
+  minWidth: '350px',
+  justifyContent: 'space-around',
+  marginBottom: '15px',
+  marginTop: '30px',
+};
+const body = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+};
+const selectionContainer = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '15px',
+};
+const selectionRow = {
+  display: 'flex',
+  gap: '15px',
+};
+const shareButton = {
+  backgroundColor: '#FF4655',
+  color: '#EBE7E0',
+};
+const roleCountRow = {
+  display: 'flex',
+  width: '90vw',
+  maxWidth: '700px',
+  minWidth: '350px',
+  justifyContent: 'space-around',
+  marginBottom: '15px',
+  color: 'white',
+};
+const buttonRow = {
+  display: 'flex',
+  gap: '15px',
 };
 
 export default MainPage;

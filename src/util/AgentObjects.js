@@ -22,6 +22,8 @@ export const emptyAgent = {
   name: 'Agent',
   code: 'oo',
   role: null,
+  smoke: false, // does the agent have smoke abilities?
+  flash: false, // does the agent have flash abilities?
 };
 
 export const jett = {
@@ -29,6 +31,8 @@ export const jett = {
   name: 'Jett',
   code: 'je',
   role: 'Duelist',
+  smoke: true,
+  flash: false,
 };
 
 export const phoenix = {
@@ -36,6 +40,8 @@ export const phoenix = {
   name: 'Phoenix',
   code: 'ph',
   role: 'Duelist',
+  smoke: false,
+  flash: true,
 };
 
 export const raze = {
@@ -43,6 +49,8 @@ export const raze = {
   name: 'Raze',
   code: 'ra',
   role: 'Duelist',
+  smoke: false,
+  flash: false,
 };
 
 export const reyna = {
@@ -50,6 +58,8 @@ export const reyna = {
   name: 'Reyna',
   code: 're',
   role: 'Duelist',
+  smoke: false,
+  flash: true,
 };
 
 export const yoru = {
@@ -57,6 +67,8 @@ export const yoru = {
   name: 'Yoru',
   code: 'yo',
   role: 'Duelist',
+  smoke: false,
+  flash: true,
 };
 
 export const astra = {
@@ -64,6 +76,8 @@ export const astra = {
   name: 'Astra',
   code: 'as',
   role: 'Controller',
+  smoke: true,
+  flash: false,
 };
 
 export const brimstone = {
@@ -71,6 +85,8 @@ export const brimstone = {
   name: 'Brimstone',
   code: 'bs',
   role: 'Controller',
+  smoke: true,
+  flash: false,
 };
 
 export const omen = {
@@ -78,6 +94,8 @@ export const omen = {
   name: 'Omen',
   code: 'om',
   role: 'Controller',
+  smoke: true,
+  flash: true,
 };
 
 export const viper = {
@@ -85,6 +103,8 @@ export const viper = {
   name: 'Viper',
   code: 'vi',
   role: 'Controller',
+  smoke: true,
+  flash: false,
 };
 
 export const breach = {
@@ -92,6 +112,8 @@ export const breach = {
   name: 'Breach',
   code: 'br',
   role: 'Initiator',
+  smoke: false,
+  flash: true,
 };
 
 export const skye = {
@@ -99,6 +121,8 @@ export const skye = {
   name: 'Skye',
   code: 'sk',
   role: 'Initiator',
+  smoke: false,
+  flash: true,
 };
 
 export const sova = {
@@ -106,6 +130,8 @@ export const sova = {
   name: 'Sova',
   code: 'so',
   role: 'Initiator',
+  smoke: false,
+  flash: false,
 };
 
 export const cypher = {
@@ -113,6 +139,8 @@ export const cypher = {
   name: 'Cypher',
   code: 'cy',
   role: 'Sentinel',
+  smoke: true,
+  flash: false,
 };
 
 export const killjoy = {
@@ -120,6 +148,8 @@ export const killjoy = {
   name: 'Killjoy',
   code: 'kj',
   role: 'Sentinel',
+  smoke: false,
+  flash: false,
 };
 
 export const sage = {
@@ -127,6 +157,8 @@ export const sage = {
   name: 'Sage',
   code: 'sa',
   role: 'Sentinel',
+  smoke: false,
+  flash: false,
 };
 
 export const kayo = {
@@ -134,6 +166,8 @@ export const kayo = {
   name: 'Kayo',
   code: 'ka',
   role: 'Initiator',
+  smoke: false,
+  flash: true,
 };
 
 export const chamber = {
@@ -141,6 +175,8 @@ export const chamber = {
   name: 'Chamber',
   code: 'ch',
   role: 'Sentinel',
+  smoke: false,
+  flash: false,
 };
 
 // function for decoding a team id (10 letters, each 2 represents an agent)
