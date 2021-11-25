@@ -7,13 +7,7 @@ const height = 110;
 const width = 370;
 const borderSize = 5;
 
-const warnings = [
-  'No flashes: this team may struggle to enter a site',
-  'No smokes: this team may struggle to block line of sight',
-  'No sentinels: this team may struggle to slow enemies down',
-];
-
-const WarningBox = () => {
+const WarningBox = ({ warnings }) => {
   // state for what warning is currently visible
   const [curr, setCurr] = React.useState(0);
 
@@ -36,7 +30,9 @@ const WarningBox = () => {
   return (
     <div style={container}>
       <div style={cutOut}></div>
-      <div style={header}>{warnings.length} warnings</div>
+      <div style={header}>
+        {warnings.length} {warnings.length === 1 ? 'warning' : 'warnings'}
+      </div>
       <div style={body}>
         {warnings[curr]}
         <div style={arrows}>
