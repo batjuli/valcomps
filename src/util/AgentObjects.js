@@ -181,7 +181,6 @@ export const chamber = {
 
 // function for decoding a team id (10 letters, each 2 represents an agent)
 export const decode = (teamId) => {
-  console.log('decoding');
   // if invalid teamid, return all empty
   if (teamId.length !== 10) {
     return [emptyAgent, emptyAgent, emptyAgent, emptyAgent, emptyAgent];
@@ -202,7 +201,6 @@ export const decode = (teamId) => {
   };
 
   for (let code of agentCodes) {
-    console.log(code);
     switch (code) {
       case jett.code:
         addAgent(jett);
